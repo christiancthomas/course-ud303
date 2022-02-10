@@ -4,4 +4,4 @@ parts = urlparse(address)
 print(parts)
 print(parts.query)
 query = parse_qs(parts.query)
-query['q']
+print("\n")
