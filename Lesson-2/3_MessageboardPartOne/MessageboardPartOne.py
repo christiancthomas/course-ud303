@@ -24,6 +24,10 @@ from urllib.parse import parse_qs
 class MessageHandler(BaseHTTPRequestHandler):
     def do_POST(self):
         # 1. How long was the message? (Use the Content-Length header.)
+<<<<<<< Updated upstream
+=======
+        length = int(self.headers.get('content-length', 0))
+>>>>>>> Stashed changes
 
         # 2. Read the correct amount of data from the request.
 
