@@ -10,6 +10,8 @@
 # Messageboard.html form.  Then run the test.py script to check it.
 
 from http.server import HTTPServer, BaseHTTPRequestHandler
+import socketserver
+from socketserver import TCPServer
 from urllib.parse import parse_qs
 
 
@@ -32,5 +34,5 @@ class MessageHandler(BaseHTTPRequestHandler):
 
 if __name__ == '__main__':
     server_address = ('', 8000)
-    httpd = HTTPServer(server_address, MessageHandler)
+    httpd = socketserver.TCPServer(server_address, MessageHandler)
     httpd.serve_forever()
