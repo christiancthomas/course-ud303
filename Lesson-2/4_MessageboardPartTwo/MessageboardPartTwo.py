@@ -46,7 +46,7 @@ class MessageHandler(BaseHTTPRequestHandler):
     
     def do_GET(self):
         # Send a 200 response.
-        self.send_response('200')
+        self.send_response(200)
 
         # Send headers.
         self.send_header('Content-type', 'text/html; charset=utf-8')
