@@ -34,5 +34,5 @@ class MessageHandler(BaseHTTPRequestHandler):
 
 if __name__ == '__main__':
     server_address = ('', 8000)
-    httpd = socketserver.TCPServer(server_address, MessageHandler)
+    httpd = HTTPServer(server_address, MessageHandler)
     httpd.serve_forever()
