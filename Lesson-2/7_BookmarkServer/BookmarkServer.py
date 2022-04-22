@@ -74,8 +74,16 @@ def CheckURI(uri, timeout=5):
     False if that GET request returns any other response, or doesn't return
     (i.e. times out).
     '''
-    # 1. Write this function.  Delete the following line.
-    raise NotImplementedError("Step 1 isn't written yet.")
+    try:
+        # Perform GET request on the URI
+        site = requests.get(uri)
+
+        # Test to see if we get a 200 response back
+        return site.status_code == 200
+        
+    except requests.RequestException:
+        # If the GET request raised an exception, it's not OK.
+        return False
 
 
 class Shortener(http.server.BaseHTTPRequestHandler):
